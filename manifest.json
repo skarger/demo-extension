@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Demo Extension",
-  "description": "Example of basic project structure",
+  "description": "Example of browser extension project structure",
   "version": "0.0.1",
   "icons": {
     "64": "icons/icon.png"
@@ -33,7 +33,8 @@
       "64": "icons/icon.png"
     },
     "default_popup": "pageAction/index.html",
-    "default_title": "Demo Extension"
+    "default_title": "Demo Extension",
+    "show_matches": ["*://*.mozilla.org/*"]
   },
   "options_ui": {
     "page": "options/index.html"
