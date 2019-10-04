@@ -1,2 +1,11 @@
 .DS_Store
 node_modules
+
+dist/browser-action/script.js
+dist/page-action/script.js
+dist/options/script.js
+dist/background/background-1.js
+dist/content-scripts/content-1.js
+dist/icons/*
+dist/manifest.json
+dist/global.js
