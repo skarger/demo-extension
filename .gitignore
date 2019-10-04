@@ -2,3 +2,5 @@
 node_modules
 
 dist/browser-action/script.js
+dist/page-action/script.js
+dist/options/script.js
