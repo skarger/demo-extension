@@ -5,7 +5,9 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode development && rm dist/global.js",
+    "web-ext": "web-ext run --source-dir=dist"
   },
   "devDependencies": {
     "css-loader": "^3.2.0",
