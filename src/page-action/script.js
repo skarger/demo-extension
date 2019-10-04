@@ -1,1 +1,3 @@
-document.getElementById('myHeading').style.color = 'red'
+import "./style.css";
+
+document.getElementById("myHeading").style.color = "red";
