@@ -8,7 +8,7 @@
   },
   "background": {
     "scripts": [
-      "background-script.js"
+      "background/background-1.js"
     ]
   },
   "content_scripts": [
@@ -17,7 +17,7 @@
         "*://*.mozilla.org/*"
       ],
       "js": [
-        "content-script.js"
+        "content-scripts/content-1.js"
       ]
     }
   ],
