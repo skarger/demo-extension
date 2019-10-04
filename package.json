@@ -4,6 +4,9 @@
   "description": "Example of browser extension project structure",
   "private": true,
   "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
   "devDependencies": {
     "eslint": "^6.5.0",
     "web-ext": "^3.2.0",
