@@ -2,7 +2,7 @@
   "name": "demo-extension",
   "version": "0.0.1",
   "description": "Example of browser extension project structure",
-  "main": "index.js",
+  "private": true,  
   "license": "MIT",
   "devDependencies": {
     "eslint": "^6.5.0",
