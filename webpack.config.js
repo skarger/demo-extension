@@ -1,5 +1,7 @@
 const path = require("path");
-const CopyPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -13,10 +15,26 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new CopyPlugin([
       { from: "src/manifest.json", to: "manifest.json" },
       { from: "src/icons/", to: "icons/" },
     ]),
+    new HtmlWebpackPlugin({
+      filename: "browser-action/index.html",
+      template: "src/browser-action/index.html",
+      chunks: ["browser-action/script"],
+    }),
+    new HtmlWebpackPlugin({
+      filename: "options/index.html",
+      template: "src/options/index.html",
+      chunks: ["options/script"],
+    }),
+    new HtmlWebpackPlugin({
+      filename: "page-action/index.html",
+      template: "src/page-action/index.html",
+      chunks: ["page-action/script"],
+    }),
   ],
   module: {
     rules: [
