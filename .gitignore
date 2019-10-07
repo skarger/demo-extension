@@ -8,4 +8,3 @@ dist/background/background-1.js
 dist/content-scripts/content-1.js
 dist/icons/*
 dist/manifest.json
-dist/global.js

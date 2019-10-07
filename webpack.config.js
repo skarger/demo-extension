@@ -1,5 +1,5 @@
 const path = require("path");
-
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -7,12 +7,17 @@ module.exports = {
     "page-action/script": "./src/page-action/script.js",
     "options/script": "./src/options/script.js",
     "content-scripts/content-1": "./src/content-scripts/content-1/script.js",
-    "global": "./src/global.js",
   },
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
   },
+  plugins: [
+    new CopyPlugin([
+      { from: "src/manifest.json", to: "manifest.json" },
+      { from: "src/icons/", to: "icons/" },
+    ]),
+  ],
   module: {
     rules: [
       {
@@ -20,17 +25,6 @@ module.exports = {
         use: [
           "style-loader",
           "css-loader",
-        ],
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "icons/[name].[ext]"
-            },
-          },
         ],
       },
     ],
