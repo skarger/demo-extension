@@ -4,6 +4,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  devtool: "source-map",
   entry: {
     "browser-action/script": "./src/browser-action/script.js",
     "page-action/script": "./src/page-action/script.js",
@@ -16,10 +17,13 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyPlugin([
-      { from: "src/manifest.json", to: "manifest.json" },
-      { from: "src/icons/", to: "icons/" },
-    ]),
+    new CopyPlugin(
+      [
+        { from: "src/manifest.json", to: "manifest.json" },
+        { from: "src/icons/", to: "icons/" },
+      ],
+      { copyUnmodified: true },
+    ),
     new HtmlWebpackPlugin({
       filename: "browser-action/index.html",
       template: "src/browser-action/index.html",
